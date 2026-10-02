@@ -1,0 +1,46 @@
+{
+  "type": "bundle",
+  "id": "bundle--57678aee-0e44-4b34-9042-1373bd4e9d85",
+  "objects": [
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--506833ad-2e50-471c-aa74-656449a16269",
+      "created": "2026-10-01T23:31:24.000Z",
+      "modified": "2026-10-01T23:31:24.000Z",
+      "name": "svcupdate.bin stand-in SHA-256 (Meridian E3)",
+      "description": "File hash IOC for the quarantined svcupdate.bin stand-in recovered from BILL-WS-14 (Evidence Card E3). Stand-in also embedded sync-update.meridian-relay.test and MeridianLoader/2.1 banner. Used as a defensive detection object for the Meridian campaign analysis in IA 642 Lab 5.1.",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[file:hashes.'SHA-256' = '3f77970a8c10f1af034e984b3b06f76db1708d377e8c3f9085af95823c9e2d73']",
+      "pattern_type": "stix",
+      "valid_from": "2026-10-01T23:31:24.000Z"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--4dac9b31-5d1a-4f26-ba74-b04fec02332e",
+      "created": "2026-10-01T23:31:24.000Z",
+      "modified": "2026-10-01T23:31:24.000Z",
+      "name": "Obfuscated Files or Information",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1027",
+          "url": "https://attack.mitre.org/techniques/T1027/"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--d02e79ac-7f5d-44c9-a2d9-ad73002084e9",
+      "created": "2026-10-01T23:31:24.000Z",
+      "modified": "2026-10-01T23:31:24.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--506833ad-2e50-471c-aa74-656449a16269",
+      "target_ref": "attack-pattern--4dac9b31-5d1a-4f26-ba74-b04fec02332e"
+    }
+  ]
+}

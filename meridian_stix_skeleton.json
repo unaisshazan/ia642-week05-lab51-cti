@@ -1,0 +1,46 @@
+{
+  "type": "bundle",
+  "id": "bundle--REPLACE-WITH-uuid4",
+  "objects": [
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--REPLACE-WITH-uuid4",
+      "created": "REPLACE-WITH-TIMESTAMP",
+      "modified": "REPLACE-WITH-TIMESTAMP",
+      "name": "REPLACE",
+      "description": "REPLACE (optional but recommended)",
+      "indicator_types": [
+        "malicious-activity"
+      ],
+      "pattern": "[REPLACE-WITH-A-STIX-PATTERN]",
+      "pattern_type": "stix",
+      "valid_from": "REPLACE-WITH-TIMESTAMP"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--REPLACE-WITH-uuid4",
+      "created": "REPLACE-WITH-TIMESTAMP",
+      "modified": "REPLACE-WITH-TIMESTAMP",
+      "name": "REPLACE-WITH-OFFICIAL-ATTACK-NAME",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T####.###",
+          "url": "https://attack.mitre.org/techniques/T####/###/"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--REPLACE-WITH-uuid4",
+      "created": "REPLACE-WITH-TIMESTAMP",
+      "modified": "REPLACE-WITH-TIMESTAMP",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--SAME-uuid4-AS-ABOVE",
+      "target_ref": "attack-pattern--SAME-uuid4-AS-ABOVE"
+    }
+  ]
+}

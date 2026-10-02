@@ -1,0 +1,5 @@
+# Lab 5.1 -- needs Python 3.10 or newer (stix2 3.0.2 requires it; tested on 3.11, 3.13, 3.14).
+# Pinned on purpose. stix2-validator 3.3.1 (the newest on PyPI as of
+# Sept 2026) ships without its JSON schemas and reports EVERY file as invalid.
+stix2-validator==3.2.0
+stix2==3.0.2

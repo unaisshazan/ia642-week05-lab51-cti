@@ -1,0 +1,132 @@
+{
+  "name": "Meridian Lab 5.1 - Ali & Usama",
+  "versions": {
+    "attack": "19",
+    "navigator": "5.3.2",
+    "layer": "4.5"
+  },
+  "domain": "enterprise-attack",
+  "description": "IA 642 Lab 5.1 Meridian campaign mapping (ATT&CK v19).",
+  "filters": {
+    "platforms": [
+      "Windows",
+      "Linux",
+      "macOS",
+      "Network",
+      "PRE",
+      "Containers",
+      "Office 365",
+      "SaaS",
+      "Google Workspace",
+      "IaaS",
+      "Identity Provider"
+    ]
+  },
+  "sorting": 0,
+  "layout": {
+    "layout": "side",
+    "aggregateFunction": "average",
+    "showID": true,
+    "showName": true,
+    "showAggregateScores": false,
+    "countUnscored": false,
+    "expandedSubtechniques": "annotated"
+  },
+  "hideDisabled": false,
+  "techniques": [
+    {
+      "techniqueID": "T1558.003",
+      "tactic": "credential-access",
+      "color": "",
+      "comment": "E2: nine Event ID 4769 requests for one SPN (MSSQLSvc/sqlapp01...), RC4 (0x17), ~3.5 minutes, from an ordinary logged-in account; ticket cracked offline. Matches ATT&CK Kerberoasting.",
+      "enabled": true,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": true,
+      "score": 95
+    },
+    {
+      "techniqueID": "T1071.001",
+      "tactic": "command-and-control",
+      "color": "",
+      "comment": "E1: 143 outbound TLS sessions to sync-update.meridian-relay.test:443 on a ~8-minute timer. ATT&CK Web Protocols covers application-layer C2 over web ports; no PCAP so HTTP content inside TLS is unconfirmed.",
+      "enabled": true,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": true,
+      "score": 75
+    },
+    {
+      "techniqueID": "T1573.002",
+      "tactic": "command-and-control",
+      "color": "",
+      "comment": "Rejected. ATT&CK requires asymmetric crypto used to conceal C2 rather than relying on inherent protocol protection. E1 is ordinary TLS 1.2 with a publicly trusted cert \u2014 that is inherent TLS, not extra asymmetric channel encryption.",
+      "enabled": true,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": true,
+      "score": 0
+    },
+    {
+      "techniqueID": "T1029",
+      "tactic": "exfiltration",
+      "color": "",
+      "comment": "Rejected. ATT&CK Scheduled Transfer is about scheduling data exfiltration. E1 shows timed C2 check-ins (~540-610 B send / 1.2-1.4 KB receive), not evidence that Meridian data left on a schedule.",
+      "enabled": true,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": false,
+      "score": 0
+    },
+    {
+      "techniqueID": "T1110.001",
+      "tactic": "credential-access",
+      "color": "",
+      "comment": "Rejected for this campaign. E4 failed SSH on vpn-gw-01 and corp-backup-01 has no time/account/host link to E1-E3; corp-backup success matches a known nightly password-change job.",
+      "enabled": true,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": true,
+      "score": 0
+    },
+    {
+      "techniqueID": "T1027",
+      "tactic": "stealth",
+      "color": "",
+      "comment": "E3: stand-in shows MZ marker, MeridianLoader banner, decode-stub-shaped bytes (90 90 90 31 C0...), and embedded C2 host. Fits Obfuscated Files parent, but file is a defanged stand-in so confidence stays possible/contested.",
+      "enabled": true,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": false,
+      "score": 45
+    },
+    {
+      "techniqueID": "T1036.005",
+      "tactic": "stealth",
+      "color": "",
+      "comment": "Optional E3: filename svcupdate.bin and banner MeridianLoader/2.1 resemble a legitimate Meridian update component. Match Legitimate Name/Location is plausible but naming alone is not strong confirmation.",
+      "enabled": true,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": true,
+      "score": 40
+    }
+  ],
+  "gradient": {
+    "colors": [
+      "#ff6666ff",
+      "#ffe766ff",
+      "#8ec843ff"
+    ],
+    "minValue": 0,
+    "maxValue": 100
+  },
+  "legendItems": [],
+  "metadata": [],
+  "links": [],
+  "showTacticRowBackground": false,
+  "tacticRowBackground": "#dddddd",
+  "selectTechniquesAcrossTactics": true,
+  "selectSubtechniquesWithParent": false,
+  "selectVisibleTechniques": false
+}
