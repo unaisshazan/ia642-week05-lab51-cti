@@ -1,0 +1,72 @@
+{
+  "type": "bundle",
+  "id": "bundle--3f1a2b4c-5d6e-4a7b-8c9d-8e1f2a3b4c5d",
+  "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--3f1a2b4c-0001-4a7b-8c9d-000000000001",
+      "created": "2026-09-21T15:00:00.000Z",
+      "modified": "2026-09-21T15:00:00.000Z",
+      "name": "Meridian Health Network SOC",
+      "identity_class": "organization"
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--3f1a2b4c-0002-4a7b-8c9d-000000000002",
+      "created": "2026-09-21T15:00:00.000Z",
+      "modified": "2026-09-21T15:00:00.000Z",
+      "name": "MeridianLoader",
+      "is_family": true,
+      "malware_types": ["downloader"],
+      "description": "Loader recovered as svcupdate.bin from BILL-WS-14. Detected by YARA rule Meridian_SvcUpdate_Loader."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--3f1a2b4c-0003-4a7b-8c9d-000000000003",
+      "created": "2026-09-21T15:00:00.000Z",
+      "modified": "2026-09-21T15:00:00.000Z",
+      "name": "Steal or Forge Kerberos Tickets: Kerberoasting",
+      "external_references": [{
+        "source_name": "mitre-attack",
+        "external_id": "T1558.003",
+        "url": "https://attack.mitre.org/techniques/T1558/003/"
+      }]
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--3f1a2b4c-0004-4a7b-8c9d-000000000004",
+      "created": "2026-09-21T15:00:00.000Z",
+      "modified": "2026-09-21T15:00:00.000Z",
+      "name": "svcupdate.bin structural indicator",
+      "description": "File name observed for the MeridianLoader sample recovered from BILL-WS-14; see the Malware object for structural markers confirmed by YARA.",
+      "indicator_types": ["malicious-activity"],
+      "pattern_type": "stix",
+      "pattern": "[file:name = 'svcupdate.bin']",
+      "valid_from": "2026-09-15T04:00:00.000Z"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--3f1a2b4c-0005-4a7b-8c9d-000000000005",
+      "created": "2026-09-21T15:00:00.000Z",
+      "modified": "2026-09-21T15:00:00.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--3f1a2b4c-0004-4a7b-8c9d-000000000004",
+      "target_ref": "malware--3f1a2b4c-0002-4a7b-8c9d-000000000002"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--3f1a2b4c-0006-4a7b-8c9d-000000000006",
+      "created": "2026-09-21T15:00:00.000Z",
+      "modified": "2026-09-21T15:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "malware--3f1a2b4c-0002-4a7b-8c9d-000000000002",
+      "target_ref": "attack-pattern--3f1a2b4c-0003-4a7b-8c9d-000000000003"
+    }
+  ]
+}

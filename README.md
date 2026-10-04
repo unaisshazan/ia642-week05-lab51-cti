@@ -36,3 +36,7 @@ PNG figures used in the report live under `captures/` (Navigator layer, FIN7 ove
 - MITRE ATT&CK Navigator 5.3.2
 - ATT&CK Enterprise v19
 - STIX 2.1 / OASIS STIX Visualizer
+
+## Lab 5 Bonus Assignment
+
+STIX 2.1 / TAXII visualization extra-credit materials live in [Lab5_Bonus_Assignment/](Lab5_Bonus_Assignment/).

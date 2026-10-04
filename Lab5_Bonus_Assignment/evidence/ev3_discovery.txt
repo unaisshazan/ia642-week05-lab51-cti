@@ -1,0 +1,9 @@
+{
+  "api_roots": [
+    "http://127.0.0.1:5000/meridian/"
+  ],
+  "contact": "soc@meridian-lab.test",
+  "default": "http://127.0.0.1:5000/meridian/",
+  "description": "Week 05 bonus lab Week 04 Kerberoasting incident intel",
+  "title": "Meridian SOC TAXII Server"
+}

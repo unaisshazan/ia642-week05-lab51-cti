@@ -1,0 +1,6 @@
+﻿Evidence #7 — stix2viz graph change after Part E extension:
+- Original graph: 4 nodes (identity, malware, attack-pattern, filename indicator) and 2 edges (indicates, uses).
+- Updated graph: 5 nodes and 3 edges.
+- Added node: indicator "MeridianLoader SHA-256 content indicator".
+- Added edge: indicates from the new SHA-256 indicator into MeridianLoader (hub degree increased from 2 to 3).
+- Timeline now includes 2026-10-04T19:00:00.000Z for the new objects.
