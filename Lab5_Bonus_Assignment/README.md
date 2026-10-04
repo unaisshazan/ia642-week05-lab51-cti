@@ -1,7 +1,7 @@
 ﻿# Lab 5 Bonus Assignment — STIX / TAXII Visualization
 
 IA 642 Defensive Security · Week 05 Bonus / Extra Credit  
-**Author:** Unais Ali (E02805019)
+**Authors:** Unais Ali (E02805019), Hafiz Usama (E02574092)
 
 **Folder in Lab 5.1 repo:** https://github.com/unaisshazan/ia642-week05-lab51-cti/tree/master/Lab5_Bonus_Assignment
 
